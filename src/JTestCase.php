@@ -5,7 +5,7 @@ use Illuminate\Foundation\Testing\ApplicationTrait;
 use Illuminate\Foundation\Testing\AssertionsTrait;
 use Illuminate\Foundation\Testing\CrawlerTrait;
 
-class JTestCase extends PHPUnit_Extensions_Selenium2TestCase
+class JTestCase extends \PHPUnit_Extensions_Selenium2TestCase
 {
 	use ApplicationTrait, AssertionsTrait, CrawlerTrait;
 
