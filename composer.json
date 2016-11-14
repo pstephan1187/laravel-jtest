@@ -4,7 +4,7 @@
     "keywords": ["laravel", "testing", "javascript"],
     "license": "MIT",
 	"require": {
-		"laravel/framework": "^5.3",
+		"laravel/framework": "^5.1",
 		"phpunit/phpunit": "^5.0",
 		"phpunit/phpunit-selenium": "^3.0"
 	},
