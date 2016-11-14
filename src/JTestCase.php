@@ -16,7 +16,7 @@ class JTestCase extends \PHPUnit_Extensions_Selenium2TestCase
 
     public function createApplication()
     {
-        $app = require __DIR__.'/../bootstrap/app.php';
+        $app = require base_path('bootstrap/app.php');
 
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
