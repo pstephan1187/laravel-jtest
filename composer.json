@@ -3,7 +3,6 @@
 	"description": "Allows testing of Javascript enabled pages via Selenium.",
     "keywords": ["laravel", "testing", "javascript"],
     "license": "MIT",
-    "version": "0.1.0",
 	"require": {
 		"laravel/framework": "^5.1",
 		"phpunit/phpunit": "^5.0",
