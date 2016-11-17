@@ -85,6 +85,32 @@ trait InteractsWithApplicationTrait
 		return $this;
 	}
 
+	public function seeOneOf($options)
+	{
+		$body_text = $this->getElementBySelector('body')->getText();
+		$failed = true;
+
+		foreach($options as $option){
+			if(strpos($body_text, $option) !== false){
+				$failed = false;
+				break;
+			}
+		}
+
+		if($failed){
+			$error =
+				'The text '.
+				'"'.$body_text.'" '.
+				'does not contain any of the following: '.
+				implode(', ', $options).'.';
+
+			throw new \PHPUnit_Framework_ExpectationFailedException($error);
+		}
+
+		return $this;
+		
+	}
+
 	public function element($selector)
 	{
 		return $this->getElementBySelector($selector);
