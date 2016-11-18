@@ -3,6 +3,7 @@
 namespace JTest;
 
 use Facebook\WebDriver\WebDriverBy;
+use Facebook\WebDriver\Remote\LocalFileDetector;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 
 trait InteractsWithApplicationTrait
