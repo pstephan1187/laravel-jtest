@@ -133,6 +133,29 @@ trait InteractsWithApplicationTrait
 		return $this;
 	}
 
+	public function seeValueOfInput($value, $selector)
+	{
+		$element_value = $this->getElementBySelector($selector)->getAttribute('value');
+
+		$this->assertEquals($value, $element_value);
+
+		return $this;
+	}
+
+	public function seeOptionIsSelected($option, $selector)
+	{
+		$element = $this->getElementBySelector($selector);
+		$selected_option = $element->findElement(WebDriverBy::cssSelector('[selected]'));
+
+		if(!$selected_option){
+			throw new \PHPUnit_Framework_ExpectationFailedException('No options selected for '.$selector);
+		}
+
+		$this->assertEquals($option, $selected_option->getText());
+
+		return $this;
+	}
+
 	public function element($selector)
 	{
 		return $this->getElementBySelector($selector);
