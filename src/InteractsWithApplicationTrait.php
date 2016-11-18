@@ -111,6 +111,27 @@ trait InteractsWithApplicationTrait
 		
 	}
 
+	public function file($file_path, $selector)
+	{
+		$element = $this->getElementBySelector($selector);
+		$element->setFileDetector(new LocalFileDetector());
+		$element->sendKeys($file_path);
+
+		return $this;
+	}
+
+	public function getCurrentUrl()
+	{
+		return str_replace($this->baseUrl, '', $this->session->getCurrentUrl());
+	}
+
+	public function seeNumberOfElements($number, $selector)
+	{
+		$this->assertEquals($number, count($this->elements($selector)));
+
+		return $this;
+	}
+
 	public function element($selector)
 	{
 		return $this->getElementBySelector($selector);
