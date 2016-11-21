@@ -244,7 +244,7 @@ trait InteractsWithApplicationTrait
 		return $this;
 	}
 
-	public function elements($selector)
+	public function elements($selector, $callback)
 	{
 		$elements = $this->getElementsBySelector($selector);
 
