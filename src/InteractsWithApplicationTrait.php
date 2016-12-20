@@ -97,6 +97,17 @@ trait InteractsWithApplicationTrait
 		return $this;
 	}
 
+	public function notSee($text)
+	{
+		$body_text = $this->getElementBySelector('body')->getText();
+
+		foreach((array) $text as $text_item){
+			$this->assertNotContains($text_item, $body_text);
+		}
+
+		return $this;
+	}
+
 	public function seeOneOf($options)
 	{
 		$body_text = $this->getElementBySelector('body')->getText();

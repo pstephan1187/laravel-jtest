@@ -94,6 +94,10 @@ This will submit the first form found matching the given CSS selector.
 
 This will assert that the given text is visible on the page.
 
+### notSee($text)
+
+This will assert that the given text is not visible on the page.
+
 ### seeOneOf($text_options)
 
 This will assert that at least one of the given text options is visible on the page.
