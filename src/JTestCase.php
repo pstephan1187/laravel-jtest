@@ -34,6 +34,12 @@ class JTestCase extends \PHPUnit_Framework_TestCase
         return $app;
     }
 
+    protected function refreshApplication()
+	{
+	    putenv('APP_ENV=testing');
+	    $this->app = $this->createApplication();
+	}
+
 	public function closeBrowser()
 	{
 	    if ($this->session) {
