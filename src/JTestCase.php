@@ -1,9 +1,6 @@
 <?php
 
 namespace JTest;
-use Illuminate\Foundation\Testing\ApplicationTrait;
-// use Illuminate\Foundation\Testing\AssertionsTrait;
-// use Illuminate\Foundation\Testing\CrawlerTrait;
 
 use Facebook\WebDriver\WebDriverDimension;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -11,10 +8,7 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 
 class JTestCase extends \PHPUnit_Framework_TestCase
 {
-	use ApplicationTrait,
-		// AssertionsTrait,
-		// CrawlerTrait,
-		InteractsWithApplicationTrait;
+	use InteractsWithApplicationTrait;
 
 	protected $browser = 'chrome';
 	protected $baseUrl = 'http://localhost:8000';
